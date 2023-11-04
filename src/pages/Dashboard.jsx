@@ -21,10 +21,9 @@ export async function dashboardAction({request}) {
   const data = await request.formData();
   const formData = Object.fromEntries(data);
   try {
-    throw new Error('Oh Ohhhh!')
-    // localStorage.setItem("userName", JSON.stringify(formData.userName));
-    // console.log("🚀 ~ dashboardAction ~ formData", formData);
-    // return toast.success(`Welcome, ${formData.userName}`);
+    localStorage.setItem("userName", JSON.stringify(formData.userName));
+    console.log("🚀 ~ dashboardAction ~ formData", formData);
+    return toast.success(`Welcome, ${formData.userName}`);
   } catch (e) {
     throw new Error("There was a problem creating your account.");
   }
