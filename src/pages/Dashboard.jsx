@@ -8,6 +8,7 @@ import { toast } from "react-toastify";
 import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
 import AddExpenseForm from "../components/AddExpenseForm";
+import BudgetItem from "../components/BudgetItem";
 
 // helper functions
 import { createBudget, createExpense, fetchData, waait } from "../helpers"
@@ -50,7 +51,6 @@ export async function dashboardAction({request}) {
 
   if (_action === "createExpense") {
     try {
-      // create an expense 
       createExpense({
         name: values.newExpense,
         amount: values.newExpenseAmount,
@@ -80,6 +80,14 @@ const Dashboard = () => {
                 <AddBudgetForm />
                 <AddExpenseForm budgets={budgets}/>
               </div>
+              <h2>Existing Budgets</h2>
+              <div className="budgets">
+                {
+                  budgets.map((budget) => (
+                    <BudgetItem key={budget.id} budget={budget} />
+                  ))
+                }
+              </div>
             </div>
             )
             : (
@@ -96,5 +104,4 @@ const Dashboard = () => {
   </>
   )
 }
-
 export default Dashboard;

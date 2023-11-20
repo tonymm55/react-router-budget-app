@@ -10,7 +10,7 @@ const Error = () => {
   
   return (
     <div className="error">
-      <h1>Uh oh! Houston we've got a problem! 🚀</h1>
+      <h1>Uh oh! Houston we have a problem! 🚀</h1>
       <p>{error.message || error.statusText}</p>
       <div className="flex-md">
         <button className="btn btn--dark" onClick={()=> navigate(-1)}>
