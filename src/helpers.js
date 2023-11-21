@@ -1,4 +1,4 @@
-export const waait = () => new Promise(res => setTimeout(res, Math.random() * 3000))
+export const waait = () => new Promise(res => setTimeout(res, Math.random() * 1000))
 
 // Colours
 const generateRandomColor = () => {
@@ -61,6 +61,9 @@ export const calculateSpentByBudget = (budgetId) => {
 
 
 // Formatting
+export const formatDateToLocaleString = (epoch) => 
+new Date(epoch).toLocaleDateString();
+
 // Formatting percentages
 export const formatPercentage = (amt) => {
   return amt.toLocaleString(undefined, {
@@ -76,4 +79,10 @@ export const formatCurrency = (amt) => {
     style: "currency",
     currency: "GBP",
   });
+}
+
+// Get all items from local storage
+export const getAllMatchingItems = ({category, key, value}) => {
+  const data = fetchData(category) ?? [];
+  return data.filter((item) => item[key] === value);
 }
