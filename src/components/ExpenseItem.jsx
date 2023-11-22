@@ -42,7 +42,7 @@ const ExpenseItem = ({ expense, showBudget }) => {
             className="btn btn--warning"
             aria-label={`Delete ${expense.name} expense`}
           >
-            <TrashIcon width={20} />
+            <TrashIcon width={24} />
           </button>
         </fetcher.Form>
       </td>

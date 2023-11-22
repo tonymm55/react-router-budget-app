@@ -87,7 +87,7 @@ const AddExpenseForm = ({ budgets }) => {
             isSubmitting ? <span>Submitting...</span> : (
               <>
                 <span>Add Expense</span>
-                <PlusCircleIcon width={20} />
+                <PlusCircleIcon width={24} />
               </>
             )
           }

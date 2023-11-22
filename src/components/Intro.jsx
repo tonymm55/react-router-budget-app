@@ -27,7 +27,7 @@ const Intro = () => {
           <input type="hidden" name="_action" value="newUser" />
           <button type="submit" className="btn btn--dark">
             <span>Create Account</span>
-            <UserPlusIcon width={20} />
+            <UserPlusIcon width={24} />
           </button>
         </Form>
         <img src={illustration} alt="Person with Money" width={600} />
